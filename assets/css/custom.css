@@ -1,0 +1,45 @@
+table.specs td {
+	vertical-align: middle;
+}
+
+table.specs tr:last-child td {
+	padding: 0
+}
+
+@media all and (max-width:550px) {
+	table.specs tr {
+		display: table;
+		width: 100%;
+	}
+	table.specs td {
+		text-align:center;
+		display: table-row;
+		border-top:0;
+	}
+	table.specs td.sep {
+		border-top: 1px solid rgba(0,0,0,.15);
+	}
+	table.specs .fa-stack {
+		margin:13px 0 5px 0;
+	}
+}
+
+.fa-stack {
+	font-size: 1.2em;
+}
+
+.fa-stack i {
+	vertical-align: middle;
+}
+
+footer a, .modal-content a {
+	text-decoration: underline;
+}
+
+.conv-rate-cont {
+	font-size: 0.7em;
+}
+
+.conv-rate {
+	border-bottom: dotted 2px white;
+}
