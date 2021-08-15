@@ -31,10 +31,10 @@ if ($_SERVER['HTTP_HOST'] == 'localhost') {
 	define('BASE_PATH', '/giveabit');
 } elseif ($_SERVER['HTTP_HOST'] == 'xyz.onion') {
 	$env = 'dark';
-	define('BASE_PATH', '/');
+	define('BASE_PATH', '');
 } else {
 	$env = 'www';
-	define('BASE_PATH', '/');
+	define('BASE_PATH', '');
 }
 
 // REDIRECT IF ADDRESS OR AMOUNT NOT VALID
