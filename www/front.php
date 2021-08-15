@@ -158,7 +158,6 @@
 				</div>
 				<div class="modal-body text-left">
 					<p>This information is related to the standard version of <i>Give a bit</i>. For more information related to the dark web version, <a href="javascript:;" data-dismiss="modal" data-toggle="modal" data-target="#versionModal">click here</a>.</p>
-					<h4>In short...</h4>
 
 					<table class="table specs">
 						<tbody>
@@ -204,11 +203,8 @@
 										<i class="fas fa-circle-notch fa-stack-2x" style="color:lightgray"></i>
 									</span></td>
 								<td>All the traffic go through CloudFlare, that protects (or at least tries to protect) the website against DDoS and malicious users.</td>
-								<td><span class="fa-stack" style="vertical-align: top;">
-										<i class="fas fa-code fa-stack-1x"></i>
-										<i class="fas fa-circle-notch fa-stack-2x" style="color:lightgray"></i>
-									</span></td>
-								<td>...</td>
+								<td class="text-center"><i class="fas fa-gavel fa-2x"></i></td>
+								<td><b>Give a bit owner is not responsible on how it is used. Give a bit IS NOT a gateway service, and DOES NOT process payments.</b></td>
 							</tr>
 							<tr>
 								<td></td>
@@ -218,7 +214,6 @@
 							</tr>
 						</tbody>
 					</table>
-					<h4>Full policy</h4>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
