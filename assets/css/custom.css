@@ -1,3 +1,7 @@
+.masthead-brand a:hover {
+	text-decoration: none !important;
+}
+
 table.specs td {
 	vertical-align: middle;
 }
@@ -12,15 +16,15 @@ table.specs tr:last-child td {
 		width: 100%;
 	}
 	table.specs td {
-		text-align:center;
+		text-align: center;
 		display: table-row;
-		border-top:0;
+		border-top: 0;
 	}
 	table.specs td.sep {
-		border-top: 1px solid rgba(0,0,0,.15);
+		border-top: 1px solid rgba(0, 0, 0, .15);
 	}
 	table.specs .fa-stack {
-		margin:13px 0 5px 0;
+		margin: 13px 0 5px 0;
 	}
 }
 

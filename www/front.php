@@ -23,7 +23,7 @@
 	<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 		<header class="masthead mb-auto">
 			<div class="inner">
-				<h3 class="masthead-brand">Give a <i class="fab fa-bitcoin"></i>it</h3>
+				<h3 class="masthead-brand"><a href="<?php echo BASE_PATH ?>/">Give a <i class="fab fa-bitcoin"></i>it</a></h3>
 				<nav class="nav nav-masthead justify-content-center">
 					<a class="nav-link <?php echo (empty($_GET['address']) ? 'active' : '') ?>" href="<?php echo BASE_PATH ?>">Home</a>
 					<a class="nav-link" href="javascript:;" data-toggle="modal" data-target="#createModal">Create your link</a>
@@ -108,7 +108,7 @@
 
 							$amount = round($amount / $conv_rate, 8);
 							$amount_str = '<nobr>' . number_format($amount, btc_decimals($amount)) . ' BTC</nobr>
-							<nobr class="conv-rate-cont">(<span data-toggle="tooltip" data-placement="top" data-html="true" title="' . $conv_rate_str . ' Conversion rate" class="conv-rate">' . $amount_curr . '</span>)</nobr>';
+							<nobr class="conv-rate-cont">(<span data-toggle="tooltip" data-placement="top" data-html="true" title="' . $conv_rate_str . ' Conversion rate at coindesk.com" class="conv-rate">' . $amount_curr . '</span>)</nobr>';
 							break;
 
 						default:
