@@ -121,7 +121,7 @@
 
 				echo '<p class="lead">
 				<a href="bitcoin:' . $address . (!empty($amount) ? '?amount=' . $amount : '') . '" class="btn btn-lg btn-secondary mt-3">Send through your app</a>
-				<a href="#" class="btn btn-lg btn-secondary mt-3">Share this link</a>
+				<a href="javascript:;" class="btn btn-lg btn-secondary mt-3" id="copy-paylink" data-clipboard-text="https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '">Copy link to clipboard</a>
 			</p>';
 			} else {
 			?>
@@ -318,6 +318,7 @@
 	<script src="<?php echo BASE_PATH ?>/assets/js/jquery-3.4.1.slim.min.js"></script>
 	<script src="<?php echo BASE_PATH ?>/assets/js/popper.min.js"></script>
 	<script src="<?php echo BASE_PATH ?>/assets/js/bootstrap.min.js"></script>
+	<script src="<?php echo BASE_PATH ?>/assets/js/clipboard.min.js"></script>
 	<script>
 		var BASE_PATH = '<?php echo BASE_PATH ?>';
 
@@ -339,15 +340,28 @@
 				return;
 			}
 
-			var url = BASE_PATH+'/'+$('#btcAddress').val();
+			var url = BASE_PATH + '/' + $('#btcAddress').val();
 			if ($('#btcAmount').val().length > 0) {
-				url += '/'+$('#btcAmount').val()+$('#btcCurrency').val();
+				url += '/' + $('#btcAmount').val() + $('#btcCurrency').val();
 			}
 			document.location = url;
 		}
 
 		$(function() {
-			$('[data-toggle="tooltip"]').tooltip()
+			$('[data-toggle="tooltip"]').tooltip();
+
+			$('#copy-paylink').tooltip({
+				trigger: 'manual',
+				title: 'Copied!'
+			});
+
+			var clipboard = new ClipboardJS('#copy-paylink');
+			clipboard.on('success', function(e) {
+				$('#copy-paylink').tooltip('show');
+				setTimeout(function() {
+					$('#copy-paylink').tooltip('hide');
+				}, 2000);
+			});
 		})
 	</script>
 </body>
