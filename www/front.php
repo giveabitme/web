@@ -191,7 +191,7 @@
 										<i class="fas fa-code fa-stack-1x"></i>
 										<i class="fas fa-circle-notch fa-stack-2x" style="color:lightgray"></i>
 									</span></td>
-								<td>Open source (see on GitHub)</td>
+								<td>Open source (see on <a href="https://github.com/giveabitme/web" target="_blank">GitHub <sup><i class="fas fa-external-link-alt"></i></sup></a>)</td>
 							</tr>
 							<tr>
 								<td><span class="fa-stack" style="vertical-align: top;">
