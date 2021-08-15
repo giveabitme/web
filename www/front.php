@@ -33,9 +33,12 @@
 
 		<main role="main" class="inner cover">
 			<?php
+			$orig_address = '';
+			$orig_amount = '';
+			$orig_currency = '';
 			if (!empty($_GET['address'])) {
 				/**** ADDRESS ****/
-				$address = $_GET['address'];
+				$orig_address = $address = $_GET['address'];
 
 				$len_dsk = 36;
 				$len_mob = 18;
@@ -58,10 +61,11 @@
 				$amount_warn = false;
 
 				if (!empty($_GET['amount'])) {
-					switch (substr($_GET['amount'], -1)) {
+					switch ($orig_currency = substr($_GET['amount'], -1)) {
 						case 's':
-							$amount = intval(substr($_GET['amount'], 0, -1)) / 100000000;
-							$amount_str = '<nobr>' . number_format(intval(substr($_GET['amount'], 0, -1))) . ' satoshi</nobr>';
+							$orig_amount = intval(substr($_GET['amount'], 0, -1));
+							$amount = $orig_amount / 100000000;
+							$amount_str = '<nobr>' . number_format(intval($orig_amount)) . ' satoshi</nobr>';
 							break;
 
 						case 'e':
@@ -78,7 +82,8 @@
 								break;
 							}
 
-							$amount = floatval(substr($_GET['amount'], 0, -1));
+							$orig_amount = substr($_GET['amount'], 0, -1);
+							$amount = floatval($orig_amount);
 							$currency = substr($_GET['amount'], -1);
 							switch ($currency) {
 								case 'e':
@@ -107,7 +112,7 @@
 							break;
 
 						default:
-							$amount = round(floatval($_GET['amount']), 8);
+							$orig_amount = $amount = round(floatval($_GET['amount']), 8);
 							$amount_str = '<nobr>' . number_format($amount, btc_decimals($amount)) . ' BTC</nobr>';
 					}
 				}
@@ -233,7 +238,8 @@
 					</button>
 				</div>
 				<div class="modal-body text-left">
-					<p>I'm working on a dark web version of the website, completely anonymous. Stay tuned!</p>
+					<p>If you care about your privacy, you can use the Dark web version of Give a bit at</p>
+					<p><a href="https://u5633nw3xacdijij5co7kcl3jxp7qef2f24un7f6bmjfvdxsvwgcaead.onion">u5633nw3xacdijij5co7kcl3jxp7qef2f24un7f6bmjfvdxsvwgcaead.onion</a></p>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -268,23 +274,23 @@
 							</tr>
 						</tbody>
 					</table>
-					<form>
+					<form action="javascript:create()">
 						<fieldset>
 							<div class="form-group">
 								<label for="btcAddress">Address: *</label>
-								<input type="text" autocomplete="off" class="form-control" id="btcAddress" aria-describedby="btcAddress" placeholder="Your wallet address (required)">
+								<input type="text" value="<?php echo $orig_address ?>" autocomplete="off" class="form-control" id="btcAddress" aria-describedby="btcAddress" onkeyup="feedbackReset()" placeholder="Your wallet address (required)">
 							</div>
 							<div class="form-group">
 								<label for="btcAmount">Amount:</label>
 								<div class="row">
-									<div class="col-7 col-sm-9"><input type="text" autocomplete="off" class="form-control" id="btcAmount" aria-describedby="btcAmount" placeholder="not specified" onkeyup="amountFilter()"></div>
+									<div class="col-7 col-sm-9"><input type="text" value="<?php echo $orig_amount ?>" autocomplete="off" class="form-control" id="btcAmount" aria-describedby="btcAmount" placeholder="not specified" onkeyup="amountFilter()"></div>
 									<div class="col-5 col-sm-3">
 										<select class="form-control" id="btcCurrency">
 											<option value="">BTC</option>
-											<option value="s">sat</option>
-											<option value="e">EUR</option>
-											<option value="u">USD</option>
-											<option value="g">GBP</option>
+											<option value="s" <?php if ($orig_currency == "s") echo 'selected'; ?>>sat</option>
+											<option value="e" <?php if ($orig_currency == "e") echo 'selected'; ?>>EUR</option>
+											<option value="u" <?php if ($orig_currency == "u") echo 'selected'; ?>>USD</option>
+											<option value="g" <?php if ($orig_currency == "g") echo 'selected'; ?>>GBP</option>
 										</select>
 									</div>
 								</div>
@@ -293,7 +299,7 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary">Create it!</button>
+					<button type="button" onclick="create()" class="btn btn-primary">Create it!</button>
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				</div>
 			</div>
@@ -313,6 +319,33 @@
 	<script src="<?php echo BASE_PATH ?>/assets/js/popper.min.js"></script>
 	<script src="<?php echo BASE_PATH ?>/assets/js/bootstrap.min.js"></script>
 	<script>
+		var BASE_PATH = '<?php echo BASE_PATH ?>';
+
+		function feedbackReset() {
+			$('.invalid-feedback').remove();
+			$('.is-invalid').removeClass('is-invalid');
+			$('.has-danger').removeClass('has-danger');
+		}
+
+		function create() {
+			feedbackReset();
+
+			var address = $('#btcAddress').val();
+			var addressRegex = /([13]{1}[a-km-zA-HJ-NP-Z1-9]{26,33}|bc1[a-z0-9]{39,59})/;
+			if (!addressRegex.test(address)) {
+				$('#btcAddress').after('<div class="invalid-feedback">Please enter a valid address</div>');
+				$('#btcAddress').parent().addClass('has-danger');
+				$('#btcAddress').addClass('is-invalid');
+				return;
+			}
+
+			var url = BASE_PATH+'/'+$('#btcAddress').val();
+			if ($('#btcAmount').val().length > 0) {
+				url += '/'+$('#btcAmount').val()+$('#btcCurrency').val();
+			}
+			document.location = url;
+		}
+
 		$(function() {
 			$('[data-toggle="tooltip"]').tooltip()
 		})
