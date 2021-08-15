@@ -8,6 +8,10 @@ RewriteRule .* - [L]
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ https://%1%{REQUEST_URI} [R=301,QSA,NC,L]
 
+# block root folders and files
+RewriteRule ^(.git)(.*)$ - [F]
+RewriteRule ^(.gitignore)$ - [F]
+
 # web pages
 RewriteRule ^([13]{1}[a-km-zA-HJ-NP-Z1-9]{26,33}|bc1[a-z0-9]{39,59})/(([0-9]+)(\.[0-9]+)?([seug]?))$ index.php?address=$1&amount=$2 [L,QSA]
 RewriteRule ^([13]{1}[a-km-zA-HJ-NP-Z1-9]{26,33}|bc1[a-z0-9]{39,59})$ index.php?address=$1 [L,QSA]
