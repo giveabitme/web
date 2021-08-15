@@ -120,7 +120,7 @@
 				echo '<img src="' . BASE_PATH . '/generator.php?address=' . $address . (!empty($amount) ? '&amount=' . $amount : '') . '" />';
 
 				echo '<p class="lead">
-				<a href="bitcoin:' . $address . (!empty($amount) ? '?amount=' . $amount : '') . '" class="btn btn-lg btn-secondary mt-3">Send through your app</a>
+				<a href="bitcoin:' . $address . (!empty($amount) ? '?amount=' . $amount : '') . '" class="btn btn-lg btn-secondary mt-3">Open your app</a>
 				<a href="javascript:;" class="btn btn-lg btn-secondary mt-3" id="copy-paylink" data-clipboard-text="https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '">Copy link to clipboard</a>
 			</p>';
 			} else {
