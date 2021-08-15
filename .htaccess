@@ -6,7 +6,7 @@ RewriteRule .* - [L]
 
 # remove www
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ http://%1%{REQUEST_URI} [R=301,QSA,NC,L]
+RewriteRule ^(.*)$ https://%1%{REQUEST_URI} [R=301,QSA,NC,L]
 
 # web pages
 RewriteRule ^([13]{1}[a-km-zA-HJ-NP-Z1-9]{26,33}|bc1[a-z0-9]{39,59})/(([0-9]+)(\.[0-9]+)?([seug]?))$ index.php?address=$1&amount=$2 [L,QSA]
