@@ -51,7 +51,7 @@
 						</tr>
 						<tr>
 							<td><span class="fa-stack" style="vertical-align: top;">
-									<i class="fab fa-shield-alt fa-stack-1x"></i></i>
+									<i class="fas fa-shield-alt fa-stack-1x"></i></i>
 									<i class="fas fa-circle-notch fa-stack-2x" style="color:lightgray"></i>
 								</span></td>
 							<td>All the traffic go through Tor</td>
