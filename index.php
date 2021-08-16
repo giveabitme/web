@@ -29,7 +29,7 @@ function amount_decimals($number) {
 if ($_SERVER['HTTP_HOST'] == 'localhost') {
 	$env = 'local';
 	define('BASE_PATH', '/giveabit');
-} elseif ($_SERVER['HTTP_HOST'] == 'xyz.onion') {
+} elseif ($_SERVER['HTTP_HOST'] == 'u5633nw3xacdijij5co7kcl3jxp7qef2f24un7f6bmjfvdxsvwgcaead.onion') {
 	$env = 'dark';
 	define('BASE_PATH', '');
 } else {
