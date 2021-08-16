@@ -139,7 +139,7 @@
 				<p>
 					<a href="javascript:;" data-toggle="modal" data-target="#privacyModal">Privacy &amp; ToS</a> |
 					<a href="javascript:;" data-toggle="modal" data-target="#versionModal">Dark web version</a> |
-					<a href="<?php echo BASE_PATH ?>/bc1qs5pwuvnt38g5aqxgyr2snr9twxsqglaptfwqzyplqerqx0v44a6qhrhfla">Buy me a <i class="fas fa-coffee"></i></a>
+					<a href="<?php echo BASE_PATH ?>/<?php echo file_get_contents('coffee_address.php') ?>">Buy me a <i class="fas fa-coffee"></i></a>
 				</p>
 			</div>
 		</footer>
