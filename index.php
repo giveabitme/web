@@ -56,10 +56,14 @@ if (is_file($stats_filename)) {
 	$stats = [];
 }
 if (empty($stats[date('Y-m-d')])) {
-	$stats[date('Y-m-d')] = 1;
-} else {
-	$stats[date('Y-m-d')]++;
+	$stats[date('Y-m-d')] = [
+		'home' => 0,
+		'address' => 0
+	];
 }
+
+$stat_page = empty($_GET['address']) ? 'home' : 'address';
+$stats[date('Y-m-d')][$stat_page]++;
 file_put_contents($stats_filename, json_encode($stats));
 
 
