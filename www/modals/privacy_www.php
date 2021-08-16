@@ -9,7 +9,7 @@
 				</button>
 			</div>
 			<div class="modal-body text-left">
-				<p>This information is related to the standard version of <i>Give a bit</i>. For more information related to the dark web version, <a href="javascript:;" data-dismiss="modal" data-toggle="modal" data-target="#versionModal">click here</a>.</p>
+				<p>This information is related to the clear web version of <i>Give a bit</i>. For more information related to the dark web version, <a href="javascript:;" data-dismiss="modal" data-toggle="modal" data-target="#versionModal">click here</a>.</p>
 
 				<table class="table specs">
 					<tbody>
