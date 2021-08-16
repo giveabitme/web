@@ -67,13 +67,5 @@ $stats[date('Y-m-d')][$stat_page]++;
 file_put_contents($stats_filename, json_encode($stats));
 
 
-// INCLUDE VIEWS
-switch ($env) {
-	case 'dark':
-		require('dark/front.php');
-		break;
-
-	case 'local':
-	default:
-		require('www/front.php');
-}
+// INCLUDE VIEW
+require('www/front.php');
