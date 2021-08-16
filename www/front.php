@@ -138,7 +138,11 @@
 			<div class="inner">
 				<p>
 					<a href="javascript:;" data-toggle="modal" data-target="#privacyModal">Privacy &amp; ToS</a> |
-					<a href="javascript:;" data-toggle="modal" data-target="#versionModal">Dark web version</a> |
+					<?php if ($env == 'dark') { ?>
+						<a href="javascript:;" data-toggle="modal" data-target="#versionModal">Clear web version</a> |
+					<?php } else { ?>
+						<a href="javascript:;" data-toggle="modal" data-target="#versionModal">Dark web version</a> |
+					<?php } ?>
 					<a href="<?php echo BASE_PATH ?>/<?php echo file_get_contents('coffee_address.php') ?>">Buy me a <i class="fas fa-coffee"></i></a>
 				</p>
 			</div>
