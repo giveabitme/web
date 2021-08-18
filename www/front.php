@@ -116,7 +116,7 @@
 							$amount_str = '<nobr>' . number_format($amount, btc_decimals($amount)) . ' BTC</nobr>';
 					}
 				}
-				echo '<h2>Send ' . $amount_str . ' to<br><pre class="mt-2" style="font-size:0.8em"><span class="d-none d-sm-block">' . $address_dsk . '</span><span class="d-block d-sm-none">' . $address_mob . '</span></pre></h2>';
+				echo '<h2>Send ' . $amount_str . ' to<br><pre class="mt-2 bit-address"><a class="nav-link" href="javascript:;" data-toggle="modal" data-target="#qrModal"><span class="d-none d-sm-block">' . $address_dsk . '</span><span class="d-block d-sm-none">' . $address_mob . '</span></a></pre></h2>';
 				echo '<img src="' . BASE_PATH . '/generator.php?address=' . $address . (!empty($amount) ? '&amount=' . $amount : '') . '" />';
 
 				echo '<p class="lead">
@@ -152,6 +152,7 @@
 	<?php require('modals/privacy_' . ($env == 'local' ? 'www' : $env) . '.php'); ?>
 	<?php require('modals/version_' . ($env == 'local' ? 'www' : $env) . '.php'); ?>
 	<?php require('modals/create.php'); ?>
+	<?php require('modals/qrcode.php'); ?>
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

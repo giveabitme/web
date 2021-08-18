@@ -40,6 +40,10 @@ footer a, .modal-content a {
 	text-decoration: underline;
 }
 
+.bit-address{
+	font-size:0.8em;
+	text-decoration: underline;
+}
 .conv-rate-cont {
 	font-size: 0.7em;
 }
