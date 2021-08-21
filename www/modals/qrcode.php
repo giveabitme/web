@@ -11,6 +11,7 @@
 			<div class="modal-body text-center">
 				<?php
 				echo '<img src="' . BASE_PATH . '/generator.php?address=' . $address . '&plain=1" />';
+				echo '<pre class="mt-1 mb-0">'.$address_dsk.'</pre>';
 				?>
 			</div>
 			<div class="modal-footer">
