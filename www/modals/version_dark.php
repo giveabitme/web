@@ -20,11 +20,13 @@
 								</span></td>
 							<td>Accessible from anyone, from everywhere</td>
 						</tr>
-						<td><span class="fa-stack" style="vertical-align: top;">
-								<i class="fas fa-eye fa-stack-1x"></i>
-								<i class="fas fa-ban fa-stack-2x" style="color:lightgray"></i>
-							</span></td>
-						<td>No logs, no ads, no tracking codes</td>
+						<tr>
+							<td><span class="fa-stack" style="vertical-align: top;">
+									<i class="fas fa-eye fa-stack-1x"></i>
+									<i class="fas fa-ban fa-stack-2x" style="color:lightgray"></i>
+								</span></td>
+							<td>No logs, no ads, no tracking codes</td>
+						</tr>
 						<tr>
 							<td></td>
 							<td></td>
