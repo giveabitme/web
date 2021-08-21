@@ -117,7 +117,7 @@
 					}
 				}
 				echo '<h2>Send ' . $amount_str . ' to<br><pre class="mt-2 bit-address"><a class="nav-link" href="javascript:;" data-toggle="modal" data-target="#qrModal"><span class="d-none d-sm-block">' . $address_dsk . '</span><span class="d-block d-sm-none">' . $address_mob . '</span></a></pre></h2>';
-				echo '<img src="' . BASE_PATH . '/generator.php?address=' . $address . (!empty($amount) ? '&amount=' . $amount : '') . '" />';
+				echo '<img src="' . BASE_PATH . '/generator.php?address=' . $address . (!empty($amount) ? '&amount=' . $amount : '') . '" class="qrPay" />';
 
 				echo '<p class="lead">
 				<a href="bitcoin:' . $address . (!empty($amount) ? '?amount=' . $amount : '') . '" class="btn btn-lg btn-secondary mt-3">Open your app</a>

@@ -40,10 +40,16 @@ footer a, .modal-content a {
 	text-decoration: underline;
 }
 
-.bit-address{
-	font-size:0.8em;
+.bit-address {
+	font-size: 0.8em;
 	text-decoration: underline;
 }
+
+.modal-open img.qrPay {
+	filter: blur(8px);
+	-webkit-filter: blur(8px);
+}
+
 .conv-rate-cont {
 	font-size: 0.7em;
 }
