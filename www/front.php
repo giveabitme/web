@@ -116,8 +116,10 @@
 							$amount_str = '<nobr>' . number_format($amount, btc_decimals($amount)) . ' BTC</nobr>';
 					}
 				}
-				echo '<h2>Send ' . $amount_str . ' to<br><pre class="mt-2 bit-address"><a class="nav-link" href="javascript:;" data-toggle="modal" data-target="#qrModal"><span class="d-none d-sm-block">' . $address_dsk . '</span><span class="d-block d-sm-none">' . $address_mob . '</span></a></pre></h2>';
+				echo '<h2>Send ' . $amount_str . ' to<br><pre class="mt-2 bit-address nav-underline"><a class="nav-link" href="javascript:;" data-toggle="modal" data-target="#qrModal"><span class="d-none d-sm-block">' . $address_dsk . '</span><span class="d-block d-sm-none">' . $address_mob . '</span></a></pre></h2>';
 				echo '<img src="' . BASE_PATH . '/generator.php?address=' . $address . (!empty($amount) ? '&amount=' . $amount : '') . '" class="qrPay" />';
+
+				echo '<p class="mt-2 mb-0"><a class="nav-link nav-underline" href="javascript:;" data-toggle="modal" data-target="#qrBinanceModal"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Binance users</a></p>';
 
 				echo '<p class="lead">
 				<a href="bitcoin:' . $address . (!empty($amount) ? '?amount=' . $amount : '') . '" class="btn btn-lg btn-secondary mt-3">Open your app</a>
@@ -153,6 +155,7 @@
 	<?php require('modals/version_' . ($env == 'local' ? 'www' : $env) . '.php'); ?>
 	<?php require('modals/create.php'); ?>
 	<?php require('modals/qrcode.php'); ?>
+	<?php require('modals/qrcode_binance.php'); ?>
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

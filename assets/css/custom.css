@@ -1,6 +1,56 @@
+/** general styles **/
+
+code {color:#ebebeb}
+
+.nav-underline {
+	text-decoration: underline;
+}
+
+.modal-open img.qrPay {
+	filter: blur(8px);
+	-webkit-filter: blur(8px);
+}
+
+.fa-std {
+	font-size: 1.2em;
+}
+
+.fa-stack {
+	font-size: 1.2em;
+}
+
+.fa-stack i {
+	vertical-align: middle;
+}
+
+/** header **/
+
 .masthead-brand a:hover {
 	text-decoration: none !important;
 }
+
+/** pay request **/
+
+.bit-address {
+	font-size: 0.8em;
+}
+
+.conv-rate-cont {
+	font-size: 0.7em;
+}
+
+.conv-rate {
+	border-bottom: dotted 2px white;
+}
+
+/** footer **/
+
+footer a, .modal-content a {
+	text-decoration: underline;
+	white-space: nowrap;
+}
+
+/** modal tables **/
 
 table.specs td {
 	vertical-align: middle;
@@ -26,34 +76,4 @@ table.specs tr:last-child td {
 	table.specs .fa-stack {
 		margin: 13px 0 5px 0;
 	}
-}
-
-.fa-stack {
-	font-size: 1.2em;
-}
-
-.fa-stack i {
-	vertical-align: middle;
-}
-
-footer a, .modal-content a {
-	text-decoration: underline;
-}
-
-.bit-address {
-	font-size: 0.8em;
-	text-decoration: underline;
-}
-
-.modal-open img.qrPay {
-	filter: blur(8px);
-	-webkit-filter: blur(8px);
-}
-
-.conv-rate-cont {
-	font-size: 0.7em;
-}
-
-.conv-rate {
-	border-bottom: dotted 2px white;
 }
