@@ -12,10 +12,10 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo BASE_PATH ?>/assets/css/cover.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo BASE_PATH ?>/assets/css/custom.css">
 
-	<title>Give a bit</title>
-	<style>
+	<title>Give a bit - Create your Bitcoin payment link in a minute</title>
+	<meta name="description" content="With Give a bit you can create and share a payment link in a blink. Enter your wallet address and get paid easily. We care about your privacy.">
+	<meta name="robots" content="<?php echo !empty($_GET['address']) ? 'noindex' : 'index' ?>, nofollow">
 
-	</style>
 </head>
 
 <body class="text-center">
