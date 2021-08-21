@@ -41,7 +41,7 @@
 				$orig_address = $address = $_GET['address'];
 
 				$len_dsk = 36;
-				$len_mob = 18;
+				$len_mob = 16;
 				$count_dsk = ceil(strlen($address) / $len_dsk);
 				$count_mob = ceil(strlen($address) / $len_mob);
 				$br_pos_dsk = ceil(strlen($address) / $count_dsk);
