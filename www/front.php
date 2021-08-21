@@ -25,7 +25,7 @@
 			<div class="inner">
 				<h3 class="masthead-brand"><a href="<?php echo BASE_PATH ?>/">Give a <i class="fab fa-bitcoin"></i>it</a></h3>
 				<nav class="nav nav-masthead justify-content-center">
-					<a class="nav-link <?php echo (empty($_GET['address']) ? 'active' : '') ?>" href="<?php echo BASE_PATH ?>">Home</a>
+					<a class="nav-link <?php echo (empty($_GET['address']) ? 'active' : '') ?>" href="<?php echo BASE_PATH ?>/">Home</a>
 					<a class="nav-link" href="javascript:;" data-toggle="modal" data-target="#createModal">Create your link</a>
 				</nav>
 			</div>
