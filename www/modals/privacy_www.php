@@ -51,7 +51,7 @@
 						</tr>
 						<tr>
 							<td><span class="fa-stack" style="vertical-align: top;">
-									<i class="fab fa-cloudflare fa-stack-1x"></i></i>
+									<i class="fab fa-cloudflare fa-stack-1x"></i>
 									<i class="fas fa-circle-notch fa-stack-2x" style="color:lightgray"></i>
 								</span></td>
 							<td>All the traffic go through CloudFlare, that protects (or at least tries to protect) the website against DDoS and malicious users.</td>
